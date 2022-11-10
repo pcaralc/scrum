@@ -2,7 +2,7 @@
 <?php include('lib.php'); ?>
 <?php
 
-pintarJuegos();
+pintartrucos();
 
 ?>
 
