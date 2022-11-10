@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('modelo.php');
 include_once('lib.php');
 
