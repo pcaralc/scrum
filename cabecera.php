@@ -57,6 +57,4 @@ echo '<!DOCTYPE html>
                 </div>
             </div>
         </header>
-        <!-- Section-->
-       
 ';
