@@ -1,3 +1,4 @@
+<?php include('modelo.php'); ?>
 <?php
 //Función para limpiar los input de los formularios
 function filtrado($datos)
@@ -12,29 +13,7 @@ function pintarJuegos()
 {
 
 
-    $juegos = array(
-        array(
-            "id" => 0, "nombre" => "league of legends", "descripcion" => "dos equipos de 5 tratan de tirar la base del otro", "genero" => "pvp",
-            "imagen" => "img/lol.jpg", "plataforma" => "pc"
-        ),
-        array(
-            "id" => 0, "nombre" => "cod", "descripcion" => "battleroyale", "genero" => "pvp",
-            "imagen" => "img/lol.jpg", "plataforma" => "pc"
-        ),
-        array(
-            "id" => 0, "nombre" => "cod", "descripcion" => "battleroyale", "genero" => "pvp",
-            "imagen" => "img/lol.jpg", "plataforma" => "pc"
-        ),
-        array(
-            "id" => 0, "nombre" => "cod", "descripcion" => "battleroyale", "genero" => "pvp",
-            "imagen" => "img/lol.jpg", "plataforma" => "pc"
-        ),
-        array(
-            "id" => 0, "nombre" => "cod", "descripcion" => "battleroyale", "genero" => "pvp",
-            "imagen" => "img/lol.jpg", "plataforma" => "pc"
-        ),
-    );
-
+    $juegos = selectJuegos();
     echo '<button type="button" class="btn btn-secondary mt-4 me-3" style="float:right" href="controlador.php?accion=borrarJuego"> INSERTAR </button>';
     echo ' <div class="row justify-content-center">
     <div class="col-11">
@@ -43,7 +22,6 @@ function pintarJuegos()
     foreach ($juegos as $j) {
         echo '<div class="col-md-3 position-relative mt-5">
        <div class="card" style="width: 18rem;">
-           <img src= ' . $j['imagen'] . ' class="card-img-top" alt="...">
            <div class="card-body">
                <h5 class="card-title text-center">' . $j['nombre'] . '</h5>
                <center> <p class="card-text">' . $j['descripcion'] . '</p> </center>
@@ -67,23 +45,7 @@ function pintarJuegos()
 function pintarTrucos()
 {
     //id_juego, id, descripcion, fecha
-    $trucos = array(
-        array(
-            "id" => 0, "nombre" => "dinero infinito", "descripcion" => "aplica el comando no se que", "fecha" => "22/11/2021"
-        ),
-        array(
-            "id" => 0, "nombre" => "dinero infinito", "descripcion" => "aplica el comando no se que", "fecha" => "22/11/2021"
-        ),
-        array(
-            "id" => 0, "nombre" => "dinero infinito", "descripcion" => "aplica el comando no se que", "fecha" => "22/11/2021"
-        ),
-        array(
-            "id" => 0, "nombre" => "dinero infinito", "descripcion" => "aplica el comando no se que", "fecha" => "22/11/2021"
-        ),
-        array(
-            "id" => 0, "nombre" => "dinero infinito", "descripcion" => "aplica el comando no se que", "fecha" => "22/11/2021"
-        ),
-    );
+    $trucos = selectTruco();
 
     echo '<button type="button" class="btn btn-secondary mt-4 me-3" style="float:right" href="controlador.php?accion=insertarTruco"> INSERTAR </button>';
 
