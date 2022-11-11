@@ -17,9 +17,9 @@ if ($_GET) {
     if (isset($_GET['inserJuego'])) {
         $nombre = filtrado($_GET['nombre']);
         $descripcion = filtrado($_GET['descripcion']);
-        $prioridad = filtrado($_GET['prioridad']);
-        $fechaFin = filtrado($_GET['fechaFin']);
-        insertarTarea($nombre,$descripcion,$prioridad,$fechaFin, getUsuario($_SESSION['login']));
+        $genero = filtrado($_GET['genero']);
+        $plataforma = filtrado($_GET['plataforma']);    
+        insertarJuego($nombre,$descripcion,$genero,$plataforma);
 
         header("Location: controlador.php?accion=crear");
     }

@@ -1,0 +1,2 @@
+  echo '<button type="button" class="btn btn-secondary mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoJuego" style="float:right" href="controlador.php?accion=insertarJuego">
+   INSERTAR </button>';
