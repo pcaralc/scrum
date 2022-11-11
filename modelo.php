@@ -116,11 +116,12 @@ function selectJuegos() {
 }
 
 
-function selectTruco() {
+function selectTruco($idJuego) {
     $conexion = conexionBD();
     $truco = null;
     try {
-        $stmt = $conexion->prepare("SELECT * FROM truco");
+        $stmt = $conexion->prepare("SELECT * FROM truco WHERE idJuego = ?");
+        $stmt->bindValue(1, $idJuego);
         $stmt->execute();
         $truco = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $ex) {

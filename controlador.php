@@ -21,6 +21,11 @@ if ($_GET) {
             borrarJuego($_GET['id']);
             header("Location: index.php");
         }
+
+        if ($_GET['accion'] == 'verJuego') {
+            borrarJuego($_GET['id']);
+            header("Location: index.php");
+        }
     
         if ($_GET['accion'] == 'borrarTruco') {
             borrarTruco(filtrado($_GET['id']));

@@ -15,7 +15,7 @@ function pintarJuegos()
 
     $juegos = selectJuegos();
     echo '<button type="button" class="btn btn-secondary mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoJuego" style="float:right">INSERTAR </button>';
-    
+
     echo ' <div class="row justify-content-center">
     <div class="col-11">
         <div class="row justify-content-around rounded p-3 ">';
@@ -29,9 +29,9 @@ function pintarJuegos()
                <p class="card-text text-center">' . $j['genero'] . '</p>
                <p class="card-text text-center">' . $j['plataforma'] . '</p>
                <center>
-               <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarJuego&id=' . $j["idJuego"].'"> BORRAR </a>
+               <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarJuego&id=' . $j["idJuego"] . '"> BORRAR </a>
                </button> 
-               <button type="button" class="btn btn-primary"> VER </button> 
+               <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=verJuego&id=' . $j["idJuego"] . '"> VER </a>
                </center>
                </div>
            </div>
@@ -43,12 +43,12 @@ function pintarJuegos()
           </div>';
 }
 
-function pintarTrucos()
+function pintarTrucos($trucos)
 {
     //id_juego, id, descripcion, fecha
     $trucos = selectTruco();
 
-    echo '<button type="button" class="btn btn-secondary mt-4 me-3" style="float:right" href="controlador.php?accion=insertarTruco"> INSERTAR </button>';
+    echo '<button type="button" class="btn btn-secondary mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoTruco" style="float:right">INSERTAR </button>';
 
     echo ' <div class="row justify-content-center">
     <div class="col-11">
@@ -67,7 +67,38 @@ function pintarTrucos()
           </div>';
     }
 
+
+
     echo '</div>
           </div>
           </div>';
+
+    echo "<!-- MODAL INSERTAR TAREA -->
+          <div class='modal fade' id='nuevoTruco' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+            <div class='modal-dialog'>
+              <div class='modal-content'>
+                <div class='modal-header'>
+                  <h5 class='modal-title' id='exampleModalLabel'>Nuevo Truco</h5>
+                </div>
+                <div class='modal-body'>
+                  <form id='formInsertarTruco' > 
+                        <div class='mb-3'>
+                            <label for='nombre' class='form-label'>Nombre</label>
+                            <input type='text' name='nombre' class='form-control' >
+                        </div>
+                        <div class='mb-3'>
+                            <label for='descripcion' class='form-label'>Descripción</label>
+                            <textarea class='form-control' name='descripcion' id='' cols='30' rows='5'></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                  <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+                  <button type='submit' name='insertarTruco' class='btn btn-primary' form='formInsertarTruco' 
+                  formaction='controlador.php' formmethod='get'>Añadir</button>
+      
+                </div>
+              </div>
+            </div>
+          </div>";
 }
