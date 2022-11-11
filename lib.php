@@ -1,4 +1,4 @@
-<?php include('modelo.php'); ?>
+<?php include_once('modelo.php'); ?>
 <?php
 //Función para limpiar los input de los formularios
 function filtrado($datos)
@@ -29,7 +29,8 @@ function pintarJuegos()
                <p class="card-text text-center">' . $j['genero'] . '</p>
                <p class="card-text text-center">' . $j['plataforma'] . '</p>
                <center>
-               <button type="button" class="btn btn-primary" href="controlador.php?accion=borrarJuego&id" > BORRAR </button> 
+               <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarJuego&id=' . $j["idJuego"].'"> BORRAR </a>
+               </button> 
                <button type="button" class="btn btn-primary"> VER </button> 
                </center>
                </div>

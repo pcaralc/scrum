@@ -33,7 +33,9 @@ echo '<!-- Footer-->
           </div>
           <div class='modal-footer'>
             <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
-            <button type='submit' name='insertarJuego' class='btn btn-primary' form='formInsertarJuego' formaction='controlador.php' formmethod='get'>Añadir</button>
+            <button type='submit' name='insertarJuego' class='btn btn-primary' form='formInsertarJuego' 
+            formaction='controlador.php' formmethod='get'>Añadir</button>
+
           </div>
         </div>
       </div>
