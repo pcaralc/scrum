@@ -66,19 +66,17 @@ function borrarJuego($idJuego) {
     $conexion = null; //Cerrar la conexión
 }
 
-function insertarTruco($truco, $descripcion, $fecha, $idJuego) {
+function insertarTruco($nombre, $descripcion, $codJuego) {
 
         
     $conexion = conexionBD();
 
     try {
-        $stmt = $conexion->prepare("INSERT INTO truco (truco, descripcion, fecha, idJuego) VALUES (?, ?, ?, ?)" );
-        $fecha = date('Y-m-d H:i:s');
+        $stmt = $conexion->prepare("INSERT INTO truco (nombre, descripcion, codJuego) VALUES (?, ?, ?)" );
 
-        $stmt->bindValue(1, $truco);
+        $stmt->bindValue(1, $nombre);
         $stmt->bindValue(2, $descripcion);
-        $stmt->bindValue(3, $fecha);
-        $stmt->bindValue(4, $idJuego);
+        $stmt->bindValue(3, $codJuego);
 
         $stmt->execute();
     } catch (PDOException $ex) {
@@ -120,7 +118,7 @@ function selectTruco($idJuego) {
     $conexion = conexionBD();
     $truco = null;
     try {
-        $stmt = $conexion->prepare("SELECT * FROM truco WHERE idJuego = ?");
+        $stmt = $conexion->prepare("SELECT * FROM truco WHERE codJuego = ?");
         $stmt->bindValue(1, $idJuego);
         $stmt->execute();
         $truco = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -130,4 +128,20 @@ function selectTruco($idJuego) {
     $conexion = null; //Cerrar la conexión
 
     return $truco;
+}
+
+function getJuego($id) {
+    $conexion = conexionBD();
+
+    try {
+        $stmt = $conexion->prepare("SELECT * FROM juego WHERE idJuego = ?");
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+        $juego = $stmt->fetch(PDO::FETCH_ASSOC);
+        $id = $juego['idJuego'];
+    } catch (PDOException $ex) {
+        echo $ex->getMessage();
+    }
+    $conexion = null; //Cerrar la conexión
+    return $id;
 }

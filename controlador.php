@@ -4,7 +4,7 @@ include_once('lib.php');
 
 //Acciones con GET
 if ($_GET) {
-   
+
 
     if (isset($_GET['insertarJuego'])) {
         $nombre = filtrado($_GET['nombre']);
@@ -22,16 +22,27 @@ if ($_GET) {
             header("Location: index.php");
         }
 
-        if ($_GET['accion'] == 'verJuego') {
-            borrarJuego($_GET['id']);
-            header("Location: index.php");
-        }
+       
     
         if ($_GET['accion'] == 'borrarTruco') {
             borrarTruco(filtrado($_GET['id']));
-            header("Location: trucos.php");
+            $codJuego = $_GET['idJuego'];
+            header("Location: trucos.php?accion=verTruco&id=".$codJuego."");
         }
+
+       
     }
+
+    if (isset($_GET['insertarTruco'])) {
+        //$truco, $descripcion, $idJuego
+        $nombre = filtrado($_GET['nombre']);
+        $descripcion = filtrado($_GET['descripcion']);
+        $codJuego = $_GET['idJuego'];
+        insertarTruco($nombre,$descripcion, $codJuego);
+
+        header("Location: trucos.php?accion=verTruco&id=".$codJuego."");
+    }
+
    
 }
 
