@@ -17,10 +17,10 @@ echo '<!DOCTYPE html>
     <body>
         <!-- Navigation-->
         <!-- aqui para poner los fondos-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container px-4 px-lg-5">
             
-                <a class="navbar-brand" href="./index.php"><h1 class="text-light">GamerTool<h1></a>
+                <a class="navbar-brand" href="./index.php"><h1 class="text-light">GamerTools<h1></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                 <div class="input-group rounded">
@@ -30,11 +30,11 @@ echo '<!DOCTYPE html>
         </nav>
         <!-- Header-->
         <!-- aqui para poner los fondos-->
-        <header class="bg-dark py-5" style="background-image: url("img/fondoprueba.jpg");>
+        <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5" >
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">GamerTool</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Best tools for gamers</p>
+                    <h1 class="display-4 fw-bolder">GamerTools</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Todas las herramientas para tus juegos preferidos</p>
                 </div>
             </div>
         </header>

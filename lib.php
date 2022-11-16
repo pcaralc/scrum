@@ -14,7 +14,7 @@ function pintarJuegos()
 
 
   $juegos = selectJuegos();
-  echo '<button type="button" class="btn btn-secondary mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoJuego" style="float:right">INSERTAR </button>';
+  echo '<button type="button" class="btn btn-success mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoJuego" style="float:right">INSERTAR </button>';
 
   echo ' <div class="row justify-content-center">
     <div class="col-11">
@@ -29,9 +29,9 @@ function pintarJuegos()
                <p class="card-text text-center">' . $j['genero'] . '</p>
                <p class="card-text text-center">' . $j['plataforma'] . '</p>
                <center>
-               <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarJuego&id=' . $j["idJuego"] . '"> BORRAR </a>
+               <button type="button" class="btn btn-danger">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarJuego&id=' . $j["idJuego"] . '"> BORRAR </a>
                </button> 
-               <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="trucos.php?accion=verTruco&id=' . $j["idJuego"] . '"> VER </a>
+               <button type="button" class="btn btn-dark">  <a class="link-light" style="text-decoration: none" href="trucos.php?accion=verTruco&id=' . $j["idJuego"] . '"> VER </a>
                </center>
                </div>
            </div>
@@ -73,7 +73,7 @@ function pintarTrucosConID($trucos, $id)
 {
   //id_juego, id, descripcion, fecha
 
-  echo '<button type="button" class="btn btn-secondary mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoTruco" style="float:right">INSERTAR </button>';
+  echo '<button type="button" class="btn btn-success mt-4 me-3" data-bs-toggle="modal" data-bs-target="#nuevoTruco" style="float:right">INSERTAR </button>';
 
   echo ' <div class="row justify-content-center">
     <div class="col-11">
@@ -84,9 +84,9 @@ function pintarTrucosConID($trucos, $id)
        <div class="card" style="width: 18rem;">
            <div class="card-body">
                <h5 class="card-title text-center">' . $t['nombre'] . '</h5>
-               <center> <p class="card-text">' . $t['descripcion'] . '</p> </center>
+               <center> <p class="card-text ">' . $t['descripcion'] . '</p> </center>
                <p class="card-text text-center">' . $t['fecha'] . '</p>
-               <center> <button type="button" class="btn btn-primary">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarTruco&id=' . $t["idTruco"] . '&idJuego='. $id.'"> BORRAR </a> </center>
+               <center> <button type="button" class="btn btn-danger">  <a class="link-light" style="text-decoration: none" href="controlador.php?accion=borrarTruco&id=' . $t["idTruco"] . '&idJuego='. $id.'"> BORRAR </a> </center>
 
                </div>
            </div>

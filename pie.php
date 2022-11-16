@@ -1,10 +1,15 @@
 <?php
 
 echo '<!-- Footer-->
-<footer class="py-5 bg-dark mt-5">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>';
 
-    echo "<!-- MODAL INSERTAR TAREA -->
+<footer class="py-5 bg-dark mt-5" >
+    <div class="container"><p class="m-0 text-center text-white">Realizado por Lati , Pilar y Fran</p></div>';  
+echo '</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="./js/scripts.js"></script>';
+echo "<!-- MODAL INSERTAR TAREA -->
     <div class='modal fade' id='nuevoJuego' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
       <div class='modal-dialog'>
         <div class='modal-content'>
@@ -39,14 +44,9 @@ echo '<!-- Footer-->
           </div>
         </div>
       </div>
-    </div>";
-echo '</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="./js/scripts.js"></script>
+    </div>
 </body>
-</html>';
+</html>";
 
 
 ?>
