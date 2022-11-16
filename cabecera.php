@@ -16,7 +16,8 @@ echo '<!DOCTYPE html>
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <!-- aqui para poner los fondos-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container px-4 px-lg-5">
             
                 <a class="navbar-brand" href="./index.php"><h1 class="text-light">GamerTool<h1></a>
@@ -28,8 +29,9 @@ echo '<!DOCTYPE html>
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
+        <!-- aqui para poner los fondos-->
+        <header class="bg-dark py-5" style="background-image: url("img/fondoprueba.jpg");>
+            <div class="container px-4 px-lg-5 my-5" >
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">GamerTool</h1>
                     <p class="lead fw-normal text-white-50 mb-0">Best tools for gamers</p>
